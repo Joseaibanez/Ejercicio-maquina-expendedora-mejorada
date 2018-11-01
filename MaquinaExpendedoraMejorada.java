@@ -25,6 +25,24 @@ public class MaquinaExpendedoraMejorada {
     }
 
     /**
+     * Devuelve el dinero total introducido
+     */
+    public int getTotalDineroAcumulado() {
+        return totalDineroAcumulado;
+    }
+    
+    /**
+     * Vacia todo el dinero que hay en la maquina
+     */
+    public int vaciarDineroDeLaMaquina() {
+        int dineroADevolver;
+        dineroADevolver = totalDineroAcumulado + balanceClienteActual;
+        totalDineroAcumulado = 0;
+        balanceClienteActual = 0;
+        return dineroADevolver;
+    }
+    
+    /**
      * Devuelve el precio del billete
      */
     public int getPrecioBillete() {
