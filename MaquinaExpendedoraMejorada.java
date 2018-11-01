@@ -23,23 +23,28 @@ public class MaquinaExpendedoraMejorada {
         estacionOrigen = origen;
         estacionDestino = destino;
     }
-
-    /**
-     * Devuelve el dinero total introducido
-     */
-    public int getTotalDineroAcumulado() {
-        return totalDineroAcumulado;
-    }
     
     /**
      * Vacia todo el dinero que hay en la maquina
      */
     public int vaciarDineroDeLaMaquina() {
-        int dineroADevolver;
-        dineroADevolver = totalDineroAcumulado + balanceClienteActual;
+       if(balanceClienteActual <= 0 ){
+           int dineroADevolver;
+        dineroADevolver = totalDineroAcumulado;
         totalDineroAcumulado = 0;
-        balanceClienteActual = 0;
         return dineroADevolver;
+        }
+       else {
+           System.out.println("sistema ocupado, imposible realizar operación");
+           return -1;
+        }
+    }
+    
+    /**
+     * Devuelve el dinero total introducido
+     */
+    public int getTotalDineroAcumulado() {
+        return totalDineroAcumulado;
     }
     
     /**
